@@ -1,0 +1,23 @@
+.hide,
+.hidden
+  display: none
+
+.replace
+  display: block
+  text-indent: -9999em
+  overflow: hidden
+  
+= clearfix
+  /*INLINE BLOCK FOR IE MAC*/
+  display: inline-block
+  /* Hide from IE Mac (REVERT TO DISPLAY BLOCK FOR ALL OTHERS) \*/
+  display: block
+  /* End hide from IE Mac */
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+  * &
+    height: 1px

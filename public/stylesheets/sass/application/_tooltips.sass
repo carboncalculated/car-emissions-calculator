@@ -1,0 +1,56 @@
+.tooltip
+  text-align: left
+  display: inline-block
+  width: 18px
+  height: 18px
+  cursor: help
+  text-indent: -9999em
+  vertical-align: baseline
+  overflow: hidden
+  background: none transparent scroll no-repeat 0 center
+  background-image: url(/images/extra-info.png)
+      
+  .description
+    display: none
+    
+$backgroundColor: #ffffff !default
+$highlightColor: #6891e0 !default
+$secondaryColor: #172131 !default
+$overlayColor: mix($backgroundColor, #000, 25%) !default
+$textColor: #333333 !default
+$headingColor: $textColor !default
+$highlightTextColor: #fff !default
+$darkBorderColor: #000 !default
+$midBorderColor: #888 !default
+$lightBorderColor: #fff !default
+
+.tip-wrap
+  :z-index 50
+  :width 300px
+  :padding $gridUnit
+  :color $highlightTextColor
+  :background-color $overlayColor
+  :text-shadow -1px -1px 0 rgba(0,0,0,1)
+  +border-radius($gridUnit)
+  +box-shadow(5px 5px 10px rgba(0,0,0,0.3))
+  .rgba &
+    :background-color transparentize($overlayColor, 0.1)
+  dl
+    margin: 0
+    dt
+      font-size: 12px
+      :text-align right
+      :float left
+      :display inline
+      :width ($baseUnit/12px)*6*$gridUnit
+      :clear left
+      :color mix($overlayColor,$highlightTextColor,40%)
+      :overflow hidden
+      :font-weight bold
+      &:after
+        :content ":"
+        :display inline
+    dd
+      :margin-bottom 0.5*$gridUnit
+      :margin-left 7*$gridUnit
+      +clearfix

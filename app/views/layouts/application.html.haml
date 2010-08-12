@@ -1,0 +1,98 @@
+!!! 5
+%html.no-js{:lang => "en"}
+  
+  %head
+    %meta{:charset => "utf-8"}
+    %title 
+      = @meta_title.blank? ? "Carbon Calculated" : "#{@meta_title}"
+    %meta{ :name =>"author", :content => "Carbon Calculated Ltd" }
+    %meta{ :name => "keywords", :content => "car calculator" }
+    %meta{ :name => "description", :content => "#{@meta_description.blank? ? "Carbon Calculated, Carbon Calculation toolsets" : "#{@meta_description} - Carbon Calculated"} " }
+    - unless @meta_robots.blank?
+      %meta{ :name => "robots", :content => "index, follow"}
+      
+    = stylesheet_link_tag 'baseline', 'application'
+      
+    = javascript_include_tag "modernizr-1.1.min.js"
+      
+    /[if lte IE 6]
+      = stylesheet_link_tag 'ie6'
+      %meta{"http-equiv" => "X-UA-Compatible", :content => "chrome=1"}
+    /[if lte IE 7]
+      = stylesheet_link_tag 'ie6', 'ie7'
+      %meta{"http-equiv" => "X-UA-Compatible", :content => "chrome=1"}
+    /[if IE]
+      = stylesheet_link_tag 'internet_explorer'
+      
+    - unless @canonical.blank?
+      %link{:href => @canonical, :rel => "canonical"}
+    = yield(:head)
+    = yield(:js_head)
+      
+  %body{:id => "body", :class => @body_classes, :onload => yield(:onload_body), :unload => yield(:unload_body)}
+        
+    %header#main-header
+      %h1 
+        = link_to "Car Calculator", root_path
+      - unless flash.blank?
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+    %nav#categories
+      %header
+        %h1
+          = link_to "Open Data", "http://www.carboncalculated.com"
+
+    
+    - if !(yield(:question_header).empty?)
+      #question_header
+        %h2
+          = yield :question_header
+  
+    = yield
+    
+    %footer#main-footer
+      #contact-info.vcard
+        .org.fn
+          Carbon Calculated Ltd
+        %dl.adr
+          %dt
+            Address
+          %dd
+            %span.street-address
+              17/21 George Street
+            %span.postal-code
+              CR0 1LA
+            ,
+            %span.locality
+              Croydon
+            %span.region
+              London
+            %span.country-name
+              United Kingdom
+        %dl
+          %dt
+            Tel
+          %dd.tel
+            +44 (0)845 4091403
+          %dt
+            Email
+          %dd
+            = link_to "support@carboncalculated.com", "mailto:support@carboncalculated.com", :class => "email"
+      %p Copyright© 2010 Carbon Calculated Ltd
+      %p Carbon Calculated Ltd is a registered limited company based in London, UK, registered in England and Wales, registered number 07243009
+      %p 
+        = link_to "Home", "http://www.carboncalculated.com"
+        
+    //==================================================
+    //  JAVASCRIPTS
+    //==================================================
+    = yield(:more_js)
+    %script{:type => "text/javascript"}
+    - if Rails.env == 'production'
+      = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js'
+    -else
+      = javascript_include_tag "mootools-1.2.4-core-yc.js"
+      
+    = javascript_include_tag "mootools-1.2.4.4-more.js"
+    = yield(:question_js)
+    = javascript_include_tag "application"

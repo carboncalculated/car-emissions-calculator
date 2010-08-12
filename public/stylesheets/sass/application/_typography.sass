@@ -1,0 +1,122 @@
+//====================================================
+//    GENERAL
+//====================================================
+body,html
+  +museo_sans
+  
+h1,h2,h3,h4,h5,h6
+  +museo_slab
+  font-weight: 500
+  
+code
+  font-family: "Monaco", "Courier New", Monospace
+  
+.large_link
+  font-size: 30px
+  line-height: 36px
+  +museo_slab
+  display: block
+  text-align: center
+  text-decoration: none
+  
+//====================================================
+//    HEADER
+//====================================================
+#main-header
+  h1
+    font-size: 64px
+    line-height: 72px
+    a
+      :text-decoration none
+
+#question_header
+  h2
+    a
+      :text-decoration none
+    
+h2
+  :border-bottom 1px solid #999
+  
+p.lead
+  +text2
+  
+.description
+  p
+    +text4
+    
+.results
+  p
+    :text-align center
+    +text4
+    
+  .quantity
+    +text1
+    :font-weight bold
+    :white-space nowrap
+    :letter-spacing -0.06em
+    :line-height 64px
+    
+  .metric
+    +text4
+    :font-weight bold
+    :line-height 64px
+    
+.share
+  a
+    +text4
+    :display block
+    :text-decoration none
+    :font-weight bold
+    :padding-left 36px
+    :height 36px
+  .tweet
+    :background url(/images/icons/twitter.gif) no-repeat scroll transparent left top
+  .facebook
+    :background url(/images/icons/facebook.gif) no-repeat scroll transparent left top
+
+#breadcrumb
+  +museo_slab
+  //:text-transform capitalize
+  ul
+    +text4
+    a
+      :text-decoration none
+  h1
+    :font-size 1em
+    :line-height inherit
+    
+
+.calculator_item header
+  h1
+    :margin 0
+    :padding 0
+    :border none
+    
+    a
+      :text-decoration none
+.calculator_description_header
+  :margin-top 10px
+  :font-size 1.5em
+  :line-height inherit
+      
+//====================================================
+//    CONTENT
+//====================================================
+
+#calculators_description
+  +text4
+  
+
+nav#categories
+  h1
+    +text3
+    a
+      :text-decoration none
+    
+  ul
+    li
+      +text4
+
+//====================================================
+//    FOOTER
+//====================================================

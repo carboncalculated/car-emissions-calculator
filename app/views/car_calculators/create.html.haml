@@ -1,0 +1,20 @@
+= content_for(:question_header) do
+  Results
+.results
+  %p
+    Your car journey was calculated to have produced...
+    = raw "<span class='quantity'>#{@car_calculator.co2} #{'kg'}</span> of <span class='metric'>#{'CO2'}</span>"
+
+.buttons
+  %ul
+    %li
+      = link_to "Calculate Again", new_car_calculator_path, :class => "submit"
+      
+.buttons
+  .results
+    %p
+      Source Information: Click Link Below to View
+  %ul
+    %li
+      - @car_calculator.source_links.uniq.each_with_index do |link, index|
+        = link_to "Source Information: #{index+1}", link, :target => "_blank"

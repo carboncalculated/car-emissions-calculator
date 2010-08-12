@@ -1,0 +1,28 @@
+.errorExplanation
+  :clear both
+  h2
+    
+  :padding-left 90px
+  :margin-bottom $gridUnit
+  :background none transparent scroll no-repeat 9px 9px
+  :background-image url(/images/form_alert.png)
+  ul
+    :margin-left 2*$gridUnit
+    :margin-bottom 2*$gridUnit
+    li
+      :margin-bottom 0.5*$gridUnit
+      
+    li:before
+      :margin-left -1em
+      :content "» "
+      :font-weight bold
+      
+dt
+  .fieldWithErrors
+    display: inline
+dd
+  .fieldWithErrors
+    :margin-left -18px
+    :padding-left 18px
+    :background none transparent scroll no-repeat 4px 3px
+    :background-image url(/images/field_alert.png)

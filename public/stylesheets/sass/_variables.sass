@@ -1,0 +1,111 @@
+//=============================
+// FOR GRID
+//=============================
+$numCols: 12
+$baseUnit: 14px
+$gridUnit: 1.28571529em
+$colWidth: $gridUnit * 3.5
+$gutterWidth: 0.5*$gridUnit
+
+//=============================
+// ELEMENT SIZES
+//=============================
+$sidebarWidth: 16*$gridUnit
+
+//=============================
+// FONTS
+//=============================
+=default_font
+  font-family: "Helvetica", "Arial", Sans-Serif
+  
+=museo_slab
+  font-family: "Helvetica", "Arial", Sans-Serif
+  font-weight: 100
+  letter-spacing: -0.03em
+  
+=museo_sans
+  font-family: "Helvetica", "Arial", Sans-Serif
+  font-weight: 300
+  
+//=============================
+// FONT SIZES
+//=============================
+$text1_font_size: 48px !default
+$text1_line_height: 54px !default
+
+$text2_font_size: 38px !default
+$text2_line_height: 54px !default
+
+$text3_font_size: 30px !default
+$text3_line_height: 36px !default
+
+$text4_font_size: 24px !default
+$text4_line_height: 36px !default
+
+$text5_font_size: 17px !default
+$text5_line_height: 18px !default
+
+$text6_font_size: 14px !default
+$text6_line_height: 18px !default
+
+$textsmall_font_size: 12px !default
+$textsmall_line_height: 18px !default
+
+
+= text1
+  font-size: ($text1_font_size/$baseUnit)*1em
+  line-height: ($text1_line_height/$text1_font_size)*1em
+  margin-bottom: ($baseUnit/$text1_font_size)*$gridUnit
+  
+= text2
+  font-size: ($text2_font_size/$baseUnit)*1em
+  line-height: ($text2_line_height/$text2_font_size)*1em
+  margin-bottom: ($baseUnit/$text2_font_size)*$gridUnit
+  
+= text3
+  font-size: ($text3_font_size/$baseUnit)*1em
+  line-height: ($text3_line_height/$text3_font_size)*1em
+  margin-bottom: ($baseUnit/$text3_font_size)*$gridUnit
+  
+= text4
+  font-size: ($text4_font_size/$baseUnit)*1em
+  line-height: ($text4_line_height/$text4_font_size)*1em
+  margin-bottom: ($baseUnit/$text4_font_size)*$gridUnit
+  
+= text5
+  font-size: ($text5_font_size/$baseUnit)*1em
+  line-height: ($text5_line_height/$text5_font_size)*1em
+  margin-bottom: ($baseUnit/$text5_font_size)*$gridUnit
+  
+= text6
+  font-size: ($text6_font_size/$baseUnit)*1em
+  line-height: ($text6_line_height/$text6_font_size)*1em
+  margin-bottom: ($baseUnit/$text6_font_size)*$gridUnit
+  
+= textsmall
+  font-size: ($textsmall_font_size/$baseUnit)*1em
+  line-height: ($textsmall_line_height/$textsmall_font_size)*1em
+  margin-bottom: ($baseUnit/$text6_font_size)*$gridUnit
+  
+//============================
+// COLORS
+//============================
+$textColor = #333333
+$backgroundColor = #fff
+$headingColor = $textColor
+$highlightColor = #1999c8
+
+=clearfix
+  &:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+  /*INLINE BLOCK FOR IE MAC*/
+  :display inline-block
+  /* Hide from IE Mac (REVERT TO DISPLAY BLOCK FOR ALL OTHERS) \*/
+  :display block
+  /* End hide from IE Mac */
+  * html &
+    height: 1px

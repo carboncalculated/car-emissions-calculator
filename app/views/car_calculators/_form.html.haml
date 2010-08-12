@@ -1,0 +1,57 @@
+%fieldset
+  %dl{:class => "single"}
+    %dt
+      = form.label :manufacture
+      %span.tooltip
+        Extended Information
+        %span.description
+          Please select your manufacture from the provided list
+    %dd
+      = form.select :manufacture, CarCalculator.manufacturers.map{|m| [m.name, m.id]}, :prompt => "Select A Manufacture"
+
+  %dl{:class => "double col1"}
+    %dt
+      = form.label :fuel_type
+      %span.tooltip
+        Extended Information
+        %span.description
+          Please select a fuel type ie Diesel
+    %dd
+      = form.select :fuel_type, options_for_select([]), :prompt => "Select A Fuel"
+  
+  %dl{:class => "double col2"}
+    %dt
+      = form.label :model
+      %span.tooltip
+        Extended Information
+        %span.description
+          Please select your car model from the list or the closest one possible
+    %dd
+      = form.select :model, [], :prompt => "Select Car Model"
+
+
+  %dl{:class => "single"}
+    %dt
+      = form.label :car
+      %span.tooltip
+        Extended Information
+        %span.description
+          Please select your car that most fits the description
+    %dd
+      = form.select :car, [], :prompt => "Select Your Car"
+      
+  %dl{:class => "double col1"}
+    %dt
+      = form.label :distance
+      %span.tooltip
+        Extended Information
+        %span.description
+          Please select your car that most fits the description
+    %dd
+      = form.text_field :distance
+      
+  %dl{:class => "double col2"}
+    %dt
+      = form.label :units
+    %dd
+      = form.select :units, [["Miles","emissions_in_kg_per_mile"], ["Km", "emissions_in_kg_per_km"]]

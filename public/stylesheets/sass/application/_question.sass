@@ -1,0 +1,198 @@
+$formLabelColor: mix($highlightColor,#fff,90%) !default
+$contentBackgroundColor: #fff !default
+$textColor: #666 !default
+$lightBorderColor: #bbb !default
+$midBorderColor: #666 !default
+
+//=====================================================
+//  MIXINS
+//=====================================================
+=ui_groups_colors($n)
+  dl
+    dt
+      :border-left-color mix($lightBorderColor, $formLabelColor,25%)
+      :border-right-color mix($midBorderColor, $formLabelColor, 25%)
+    dd
+      :border-left-color mix($lightBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+      :border-right-color mix($midBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+    .rgba &
+      dt,dd
+        :border-left-color transparentize($lightBorderColor, 0.6)
+        :border-right-color transparentize($midBorderColor, 0.6)
+          
+  &.col1
+    dl.single,
+    dl.col1
+      dt
+        :border-left-color mix($midBorderColor, $formLabelColor, 25%)
+      dd
+        :border-left-color mix($midBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+      .rgba &
+        dt,dd
+          :border-left-color transparentize($midBorderColor, 0.6)
+          
+=ui_groups_layout($n)
+  fieldset
+    //:padding-right 0
+    //:padding-left 0
+    //:border-right-style none
+    //:border-left-style none
+    
+  dl.single,
+  dl.col1
+    :clear left
+    
+  &.col1
+    fieldset
+      //:padding-right 0
+      //:padding-left 0.5*$gridUnit
+      //:border-right-style none
+      //:border-left-style solid
+        
+  &.col#{$n}
+    fieldset
+      //:padding-right 0.5*$gridUnit
+      //:padding-left 0
+      //:border-left-style none
+      //:border-right-style solid
+      
+//=====================================================
+//  END MIXINS
+//=====================================================
+
+#question
+  form
+    fieldset
+      padding: 0.5*$gridUnit
+      margin: 0 0 $gridUnit 0
+      border: 1px dotted #ddd
+    dl
+      margin-top: -18px
+    dt,
+    dd
+      text-align: left
+      display: block
+      float: none
+      width: auto
+      margin: 0 1.5*$gridUnit 0 0
+      padding: 0
+      border: 1px solid
+      position: static
+      left: 0
+      
+    dt
+      position: relative
+      left: -18px
+      top: 27px
+      z-index: 5
+      padding-bottom: 18px
+      border: none
+      background: url(/images/backgrounds/header_banner.png) no-repeat scroll transparent -18px bottom
+      +clearfix
+      label
+        +text5
+        font-family: "Monaco","Courier","Courier New", monospace
+        font-weight: bold
+        :margin 0
+        :padding 0.25*$gridUnit*($baseUnit/$text5_font_size) $gridUnit
+        :float left
+        :display inline
+        color: #fff
+        background-color: $formLabelColor
+    dd
+      :min-height 1.5*$gridUnit
+      :position relative
+      :padding 18px 1.5*$gridUnit 0.5*$gridUnit 1.5*$gridUnit
+      :background-color mix($textColor, $contentBackgroundColor, 5%)
+      :border-color mix($midBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+      input,
+      select
+        position: relative
+        width: 100%
+        z-index: 6
+        
+    .buttons
+      :padding-top $gridUnit
+      
+    .single
+      :clear both
+      :width 100%
+      
+    .double
+      :width 50%
+      :float left
+      &.large
+        :width 66.6667%
+      &.small
+        :width 33.3333%
+      
+    .tripple
+      :width 33.3333%
+      :float left
+      
+    .quadrupple
+      :width 25%
+      :float left
+      
+    .quintipple
+      :width 20%
+      :float left
+      
+    .ui_groups
+      +clearfix
+      
+    .ui_group
+      +clearfix
+      
+    .ui_group.single
+      dl
+        dt
+          +border-radius(0)
+          :border-left-color mix($lightBorderColor, $formLabelColor,25%)
+          :border-right-color mix($midBorderColor, $formLabelColor, 25%)
+        dd
+          +border-radius(0)
+          :border-left-color mix($lightBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+          :border-right-color mix($midBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+          
+      dl.single,
+      dl.col1
+        dt
+          :border-left-color mix($midBorderColor, $formLabelColor, 25%)
+        dd
+          :border-left-color mix($midBorderColor, mix($textColor, $contentBackgroundColor, 15%), 25%)
+          
+      dl.col1
+        :clear left
+          
+    .ui_group.double
+      +ui_groups_layout(2)
+      +ui_groups_colors(2)
+      
+    .ui_group.tripple
+      +ui_groups_layout(3)
+      +ui_groups_colors(3)
+      
+    .ui_group.quadrupple
+      +ui_groups_layout(4)
+      +ui_groups_colors(4)
+      
+    .ui_group.quintipple
+      +ui_groups_layout(5)
+      +ui_groups_colors(5)
+      
+    .ui_group.bottomless
+      fieldset
+        :padding-bottom 0
+        :margin-bottom 0
+        :border-bottom-style none
+      
+    .ui_group.topless
+      fieldset
+        :padding-top 0
+        :margin-top 0
+        :border-top-style none
+
+dl dd.loading 
+  :background none transparent scroll no-repeat 0px 11px !important
+  :background-image url(/images/ajax-loader.gif) !important

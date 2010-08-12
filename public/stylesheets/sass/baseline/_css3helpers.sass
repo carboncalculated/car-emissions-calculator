@@ -1,0 +1,56 @@
+=background-size($size: "auto auto")
+  -webkit-background-size: $size
+  -moz-background-size: $size
+  -o-background-size: $size
+  background-size: $size
+  
+=background-origin($keyword: "padding-box")
+  -webkit-background-origin: $keyword
+  -moz-background-origin: $keyword
+  -o-background-origin: $keyword
+  background-origin: $keyword
+  
+=background-clip($keyword: "border-box")
+  -webkit-background-origin: $keyword
+  -moz-background-origin: $keyword
+  background-origin: $keyword
+  
+=border-radius($topleft: 10px, $topright: $topleft, $bottomright: $topleft, $bottomleft: $topleft)
+  -webkit-border-top-left-radius: $topleft
+  -webkit-border-top-right-radius: $topright
+  -webkit-border-bottom-right-radius: $bottomright
+  -webkit-border-bottom-left-radius: $bottomleft
+  -moz-border-radius-topleft: $topleft
+  -moz-border-radius-topright: $topright
+  -moz-border-radius-bottomright: $bottomright
+  -moz-border-radius-bottomleft: $bottomleft
+  border-top-left-radius: $topleft
+  border-top-right-radius: $topright
+  border-bottom-right-radius: $bottomright
+  border-bottom-left-radius: $bottomleft
+  
+=box-shadow($value: "rgba(0,0,0,0.2) 2px 2px 5px")
+  -moz-box-shadow: $value
+  -webkit-box-shadow: $value
+  box-shadow: $value
+  
+=column-count($cols: auto)
+  -webkit-column-count: $cols
+  -moz-column-count: $cols
+  column-count: $cols
+  
+=column-width($colWidth: auto)
+  -webkit-column-width: $colWidth
+  -moz-column-width: $colWidth
+  column-width: $colWidth
+
+=column-gap($colGap: auto)
+  -webkit-column-gap: $colGap
+  -moz-column-gap: $colGap
+  column-gap: $colGap
+  
+=column-rule($values)
+  -webkit-column-rule: $values
+  -moz-column-rule: $values
+  column-rule: $values
+  

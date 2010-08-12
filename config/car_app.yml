@@ -1,0 +1,25 @@
+DEFAULTS: &DEFAULTS
+  application_name: car-app
+  
+development:
+  <<: *DEFAULTS
+  protocol: "http"
+  api_server: localhost:3005
+  api_key: 
+  
+test:
+  <<: *DEFAULTS
+  host: localhost.com
+  api_key: "testing key"
+  
+production:
+  <<: *DEFAULTS
+  host: blar
+  api_server: api.carboncalculated.com
+  api_key: 
+
+staging:  
+  <<: *DEFAULTS
+  host: blar-staging
+  api_server: api-stage.carboncalculated.com
+  api_key: 

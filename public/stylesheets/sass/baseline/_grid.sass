@@ -1,0 +1,27 @@
+.container_#{$numCols}
+  font-size: $baseUnit
+  margin-left: auto
+  margin-right: auto
+  width: $numCols * ($colWidth+(2*$gutterWidth))
+
+@for $i from 1 through $numCols
+  .container_#{$numCols}
+    .grid_#{$i}
+      font-size: $baseUnit
+      width: ($i * $colWidth) + (($i - 1)*(2*$gutterWidth))
+      float: left
+      display: inline
+      margin
+        left: $gutterWidth
+        right: $gutterWidth
+    @if $i < $numCols
+      .prefix_#{$i}
+        padding-left: ($i * $colWidth) + ($i * 2 * $gutterWidth)
+      .suffix_#{$i}
+        padding-right: ($i * $colWidth) + ($i * 2 * $gutterWidth)
+
+.container_#{$numCols} .alpha
+  margin-left: 0
+  
+.container_#{$numCols} .omega
+  margin-right: 0

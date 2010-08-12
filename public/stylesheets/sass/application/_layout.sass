@@ -1,0 +1,252 @@
+//====================================================
+//    GENERIC
+//====================================================
+html
+  :overflow-y scroll
+  
+body
+  :height auto
+  :width 10*$colWidth + 9*(2*$gutterWidth)
+  :padding 0 $colWidth+3*$gutterWidth
+code
+  :display block
+  :padding-left $gridUnit
+  :margin-left $gridUnit
+  :border-left-width 1px
+  :border-left-style solid
+  
+.large_link
+  :display inline-block
+  :margin auto
+  :padding 9px 18px
+  :text-align center
+  +border-radius(18px)
+
+//====================================================
+//    HEADER
+//====================================================
+#main-header
+  :position relative
+  :right 45px
+  :bottom 2*$gridUnit
+  :padding 0 $gutterWidth 36px $gutterWidth
+  :margin-left -($colWidth+3*$gutterWidth)
+  :margin-bottom -85px
+  :margin-top 3*$gridUnit
+  h1
+    :display inline-block
+    :padding 0
+    :padding-left 2.5*$gridUnit * (14/48)
+    :padding-right 1.5*$gridUnit * (14/48)
+    :margin-bottom 0
+    
+#question_header
+  :clear both
+  :position relative
+  :top -25px
+  h2
+    :text-align center
+    :padding 0
+//====================================================
+//    CONTENT
+//====================================================
+p.lead
+  :float left
+  :display inline
+  :width (5*$colWidth+8*$gutterWidth)*($baseUnit/$text2_font_size)
+  :padding-right $gutterWidth * ($baseUnit/$text2_font_size)
+  
+.description
+  :float left
+  :display inline
+  :width (5*$colWidth+8*$gutterWidth)
+  :padding-left $gutterWidth
+  :margin-top 0.7857em
+  
+#question
+  :clear both
+  
+#map_with_distance
+  :clear both
+  
+section
+  :clear both
+  
+.results
+
+.buttons
+  width: 100%
+  margin-top: 0*$gridUnit
+  overflow: hidden
+  +clearfix
+  ul
+    :position relative
+    :display inline
+    :float left
+    :left 50%
+    li
+      :position relative
+      :float left
+      :display inline
+      :right 50%
+      :margin 0 $gridUnit
+  input[type=submit],
+  button,
+  .submit
+    text-decoration: none
+    :display block
+    :background-color $highlightColor
+    :color #fff
+    +text3
+    border: 0
+    padding: 0.5*$gridUnit*($baseUnit/$text3_font_size) $gridUnit*($baseUnit/$text3_font_size)
+    +box-shadow(1px 1px 5px #999)
+    +border-radius($gridUnit*($baseUnit/$text3_font_size))
+    :cursor pointer
+    text-shadow: -1px -1px 0px #666
+    .cssgradients.rgba &
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.25)), to(rgba(0,0,0,0.25)))
+      background-image: -moz-linear-gradient(center top, rgba(255,255,255,0.25) , rgba(0,0,0,0.25))
+    &:hover
+      :background-color mix($highlightColor,#000)
+      text-shadow: 1px 1px 0px #333
+      .cssgradients.rgba &
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.25)), to(rgba(255,255,255,0.25)))
+        background-image: -moz-linear-gradient(center top, rgba(0,0,0,0.25) , rgba(255,255,255,0.25))
+
+// BreadCrumbs Man
+#breadcrumb,
+.calculator_item header
+  :position relative
+  :right 45px
+  :padding 0 !gutterWidth 36px !gutterWidth
+  :margin-bottom -36px
+  :overflow hidden
+  ul
+    :float left
+    :display inline
+    :padding 0
+    :padding-left 2.5*!gridUnit * (14/30)
+    :padding-right 1.5*!gridUnit * (14/30)
+    li
+      :display inline
+
+  h1
+    :padding 0
+    :display inline
+    
+.calculator_item header
+  :clear both
+  :right 135px
+  
+  h1
+    :float left
+    :padding 0 36px
+    
+.calculator_item
+  dl
+    :clear both    
+    :height 280px
+  dd.calculator_image
+    :display block
+    :float left
+    :margin 10px
+    :margin-right 20px
+    img
+      :width 300px
+      :height 200px 
+  dd.calculator_description
+    :margin-top 20px
+    :display block
+    :width 100%
+    
+//====================================================
+//    PAGINATION
+#paginate
+  :clear both
+  :padding 0.5*$gridUnit $gutterWidth
+  :margin $gridUnit ($colWidth+2*$gutterWidth)
+  :border-top-width 1px
+  :border-top-style solid
+  :overflow hidden
+  span,em,a
+    :float left
+    :display inline
+    :position relative
+    :right 50%
+    :margin-right (0.5*$gridUnit)*(14/17)
+  .pagination
+    :float left
+    :display inline
+    :position relative
+    :left 50%
+    :padding 0
+//====================================================
+    
+nav#categories
+  position: relative
+  z-index: 0
+  header
+    width: 205px
+    position: relative
+    left: 0px
+    padding-bottom: 18px
+    margin-bottom: -21px
+    margin-right: -1*$gutterWidth
+    margin-left: -24px
+    h1
+      position: relative
+      padding: 0 0 0 $gridUnit*(14/30)
+      
+  padding: 0 $gutterWidth
+  margin-left: 9*$colWidth+9*$gridUnit
+  margin-top: $gridUnit
+  ul
+    margin-top: $gridUnit
+    margin-left: $gridUnit
+    padding-left: $gridUnit
+    border-left-width: 1px
+    border-left-style: solid
+    li
+      padding: 0
+      &:before
+        content: "»"    
+//====================================================
+//    FOOTER
+//====================================================
+#main-footer
+  :clear both
+  :margin-top 5*$gridUnit
+  :padding-bottom 2*$gridUnit
+  :margin-bottom $gridUnit
+  :border-top 1px solid #ddd
+  &:after
+    :content "."
+    :display block
+    :clear both
+    :visibility hidden
+    :height 0
+  #contact-info
+    :float right
+    :display inline
+    :width 4*$colWidth+3*2*$gutterWidth
+    dl
+      :float left
+      :display inline
+    dt
+      :clear left
+      :float left
+      :display inline
+      :width 50px
+    dd
+      :float left
+      :display inline
+      :margin-left 18px
+  p
+    :font-size 12px
+    :width (6*$colWidth+5*2*$gutterWidth)*(14/12)
+    
+.fn
+  :font-weight bold
+.street-address, .region, .country-name
+  :display block

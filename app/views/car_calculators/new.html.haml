@@ -1,0 +1,16 @@
+= content_for(:question_header) do
+  = link_to "Car Calculator",  new_car_calculator_path
+%p.lead
+  Calculating emissions of car journeys
+  
+.description
+  %p
+    Select your car from the drop downs and enter you known distance; 
+    Then click Submit to get your results.
+
+#question
+  = form_for @car_calculator, :as => :car_calculator, :url => car_calculators_path, do |form|
+    = render :partial => "/shared/errors_for", :locals => {:resource => @car_calculator}
+    = render :partial => "form", :locals => {:form => form}
+    .buttons
+      %input{:type => "submit", :value => "Calculate", :class => "submit"}
