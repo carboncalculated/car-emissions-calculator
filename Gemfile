@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 gem "rails", "3.0.0.rc"
 gem "rails3-generators", "0.12.1"
 gem "haml", "3.0.16"
-gem "calculated", "0.1.1"
+gem "calculated", "0.1.2"
 
 group :test do
   gem "redgreen", "1.2.2"
